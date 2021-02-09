@@ -41,7 +41,7 @@ def get_fremont_dataset(project_name=PROJECT, url=URL, force_download=False):
         urlretrieve(url, filename)
     dataset = pd.read_csv(filename, index_col='Date')
     try:
-        dataset.index = pd.to_datetime(dataset.index, format='%m/%d/%Y %H:%M:%S %p')
+        dataset.index = pd.to_datetime(dataset.index, format='%m/%d/%Y %I:%M:%S %p')
     except TypeError:
         dataset.index = pd.to_datetime(dataset.index)
     return dataset
