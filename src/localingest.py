@@ -45,6 +45,3 @@ def get_fremont_dataset(project_name=PROJECT, url=URL, force_download=False):
     except TypeError:
         dataset.index = pd.to_datetime(dataset.index)
     return dataset
-
-#dataset = get_fremont_dataset()
-#print(dataset.head())
